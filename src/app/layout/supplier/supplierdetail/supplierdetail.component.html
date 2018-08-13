@@ -1,0 +1,84 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Supplier Detail'" [icon]="'fa-bar-chart-o'"></app-page-header>
+  <div class="row">
+      <div class="col col-sm-10">
+      </div>
+      <div class="col col-sm-2" style="float: left;">
+              <a [routerLink]="['/supplier']">Back to Supplier</a>
+      </div>
+</div>
+  <div style="height: 10px"></div>
+  <div class="row">
+    <div class="col col-sm-12">
+      <form>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Name</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="supplierName" class="form-control" [(ngModel)]="supplierData.suppliername">
+          </div>
+          <div class="col col-sm-2">
+            <label>Payment Mode</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="paymentMode" class="form-control" [(ngModel)]="supplierData.paymentmode">
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Postal Code</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="postalCode" class="form-control" [(ngModel)]="supplierData.postalcode">
+          </div>
+          <div class="col col-sm-2">
+            <label>Town</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="town" class="form-control" [(ngModel)]="supplierData.town">
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Phone Number</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="phoneNumber" class="form-control" [(ngModel)]="supplierData.phonenumber">
+          </div>
+          <div class="col col-sm-2">
+            <label>EMail</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="supplieremail" class="form-control" [(ngModel)]="supplierData.email">
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Company</label>
+          </div>
+          <div class="col col-sm-2">
+              <select name="CompanyName" class="form-control" [(ngModel)]="supplierData.companyname">
+                  <option>Green Tea</option>
+          </select>
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-10">
+          </div>
+          <div class="col col-sm-2">
+            <button type="submit" (click)="saveSupplier(supplierData)" class="btn-primary">Submit </button> &nbsp;
+            <button type="reset" (click)="reset(supplierData)" class="btn-primary">Reset </button>
+          </div>
+          <p-dialog header="Confirmation" [(visible)]="display">
+            Supplier Added Successfully !.
+          </p-dialog>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

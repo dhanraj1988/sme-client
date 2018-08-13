@@ -1,0 +1,83 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Customer Detail'" [icon]="'fa-bar-chart-o'"></app-page-header>
+  <div class="row">
+      <div class="col col-sm-10">
+      </div>
+      <div class="col col-sm-2" style="float: left;">
+              <a [routerLink]="['/customer']">Back to Customer</a>
+      </div>
+</div>
+  <div style="height: 10px"></div>
+  <div class="row">
+    <div class="col col-sm-12">
+      <form>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Name</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="customerName" class="form-control"  [(ngModel)]="customerData.customername" />
+          </div>
+          <div class="col col-sm-2">
+            <label>Payment Mode</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="paymentMode" class="form-control"  [(ngModel)]="customerData.paymentmode"/>
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Postal Code</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="postalCode" class="form-control"  [(ngModel)]="customerData.postalcode"/>
+          </div>
+          <div class="col col-sm-2">
+            <label>Town</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="town" class="form-control"  [(ngModel)]="customerData.town"/>
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Phone Number</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="phoneNumber" class="form-control"  [(ngModel)]="customerData.phonenumber"/>
+          </div>
+          <div class="col col-sm-2">
+            <label>EMail</label>
+          </div>
+          <div class="col col-sm-2">
+            <input name="customeremail" class="form-control"  [(ngModel)]="customerData.email"/>
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-2">
+            <label>Company</label>
+          </div>
+          <div class="col col-sm-2">
+              <select name="CompanyName" class="form-control" [(ngModel)]="customerData.companyname">
+                  <option>Green Tea</option>
+          </select>
+          </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+          <div class="col col-sm-10">
+          </div>
+          <div class="col col-sm-2">
+            <button type="submit" (click)="saveCustomer(customerData)" class="btn-primary">Submit </button> &nbsp;
+            <button type="reset" (click)="reset(customerData)" class="btn-primary">Reset </button>
+          </div>
+          <p-dialog header="Confirmation" [(visible)]="display">
+            Customer Added Successfully !.
+          </p-dialog>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,69 @@
+<!-- <div [@routerTransition]>
+</div> -->
+<app-page-header [heading]="'Account Detail'" [icon]="'fa-bar-chart-o'"></app-page-header>
+<div class="row">
+        <div class="col col-sm-12">
+                <form>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2" style="float: left;">
+                                        <a [routerLink]="['/account']">Back to Account</a>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Account For</label>
+                                </div>
+                                <div class="col col-sm-3">
+                                        <select name="AccountType" class="form-control" [(ngModel)]="accountData.suppliertype">
+                                                <option>Supplier</option>
+                                                <option>Customer</option>
+                                        </select>
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Company Name</label>
+                                </div>
+                                <div class="col col-sm-3">
+                                                <select name="AccountType" class="form-control" [(ngModel)]="accountData.accountfor">
+                                                                <option>Green Tea</option>
+                                                        </select>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Account Code</label>
+                                </div>
+                                <div class="col col-sm-3">
+                                        <input name="AccountCode" class="form-control" [(ngModel)]="accountData.accountcode">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Account Name</label>
+                                </div>
+                                <div class="col col-sm-3">
+                                        <input name="AccountName" class="form-control" [(ngModel)]="accountData.accountname">
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Start Account Period Month</label>
+                                </div>
+                                <div class="col col-sm-3">
+                                        <input name="Period" class="form-control" [(ngModel)]="accountData.startaccountperiodmonth">
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <button type="submit" (click)="saveAccount(accountData)" class="btn-primary">Submit </button> &nbsp;
+                                        <button type="reset" (click)="reset(accountData)" class="btn-primary">Reset </button>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>

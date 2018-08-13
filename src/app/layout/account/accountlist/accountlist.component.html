@@ -1,0 +1,85 @@
+<!-- <div [@routerTransition]>
+</div> -->
+<app-page-header [heading]="'Account List'" [icon]="'fa-bar-chart-o'"></app-page-header>
+<div class="row">
+        <div class="col col-sm-12">
+                <form>
+                        <div class="row">
+                                <div class="col col-sm-9">
+                                </div>
+                                <div class="col col-sm-3" style="float: right;">
+                                        <a [routerLink]="['accountDetail', 'Add', '0']">Add Supplier/Customer Account</a>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Company Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="CompanyName" class="form-control" [(ngModel)]="accountData.companyname">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Account Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="CompanyName" class="form-control" [(ngModel)]="accountData.accountname">
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Supplier Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="SupplierName" class="form-control" [(ngModel)]="accountData.suppliername">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Customer Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="CustomerName" class="form-control" [(ngModel)]="accountData.customername">
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Type</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <select name="SupplierType" class="form-control" [(ngModel)]="accountData.suppliertype">
+                                                <option>Local</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-9">
+                                </div>
+                                <div class="col col-sm-3">
+                                        <button type="submit" (click)="searchAccount(accountData)" class="btn-primary">Search </button> &nbsp;
+                                        <button type="reset" (click)="reset(accountData)" class="btn-primary">Reset </button>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-12">
+                                        <p-dataTable [value]="accountList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                                                <p-column field="id" [style]="{'width':'40px'}">
+                                                        <ng-template pTemplate="header">
+                                                        </ng-template>
+                                                        <ng-template let-col let-data="rowData" pTemplate="body">
+                                                                <a [routerLink]="['accountDetail','Edit',data[col.field]]" class="fa fa-pencil"></a>
+                                                        </ng-template>
+                                                </p-column>
+                                                <p-column field="companyname" header="Company Name"></p-column>
+                                                <p-column field="accountname" header="Account Name"></p-column>
+                                                <p-column field="accountnumber" header="Account Number"></p-column>
+                                                <p-column field="suppliername" header="Supplier Name"></p-column>
+                                                <p-column field="customername" header="Customer Name"></p-column>
+                                        </p-dataTable>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>

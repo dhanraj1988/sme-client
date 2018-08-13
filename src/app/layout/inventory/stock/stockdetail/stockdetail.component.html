@@ -1,0 +1,133 @@
+<!-- <div [@routerTransition]>
+</div> -->
+<app-page-header [heading]="'Stock Detail'" [icon]="'fa-bar-chart-o'"></app-page-header>
+<div class="row">
+  <div class="col col-sm-12">
+    <form>
+      <div class="row">
+        <div class="col col-sm-10">
+        </div>
+        <div class="col col-sm-2" style="float: left;">
+          <a [routerLink]="['/stock']">Back to Stock</a>
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Stock Code</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="StockCode" class="form-control" [(ngModel)]="stockData.stockcode">
+        </div>
+        <div class="col col-sm-2">
+          <label>Stock Name</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="StockName" class="form-control" [(ngModel)]="stockData.stockname">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Unit Of Issue</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="UnitOfIssue" class="form-control" [(ngModel)]="stockData.unitofissue">
+        </div>
+        <div class="col col-sm-2">
+          <label>Stock Category</label>
+        </div>
+        <div class="col col-sm-3">
+            <select name="stockcategory" class="form-control" [(ngModel)]="stockData.stockcategoryname">
+                <option>Test 1 </option>
+                <option>Test 2</option>
+        </select>
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Selling Price</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="sellingprice" class="form-control" [(ngModel)]="stockData.sellingprice">
+        </div>
+        <div class="col col-sm-2">
+          <label>Recorder Level</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="recorderlevel" class="form-control" [(ngModel)]="stockData.recorderlevel">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Barcode ID</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="barcodeid" class="form-control" [(ngModel)]="stockData.barcodeid">
+        </div>
+        <div class="col col-sm-2">
+          <label>Barcode</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="barcode" class="form-control" [(ngModel)]="stockData.barcode">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>SIC Group ID</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="sicgroupid" class="form-control" [(ngModel)]="stockData.sicgroupid">
+        </div>
+        <div class="col col-sm-2">
+          <label>Average Unit Cost</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="averageunitcost" class="form-control" [(ngModel)]="stockData.averageunitcost">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Unit Cost</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="unitcost" class="form-control" [(ngModel)]="stockData.unitcost">
+        </div>
+        <div class="col col-sm-2">
+          <label>MarkUp</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="markup" class="form-control" [(ngModel)]="stockData.markup">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-2">
+          <label>Store ID</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="storeid" class="form-control" [(ngModel)]="stockData.storeid">
+        </div>
+        <div class="col col-sm-2">
+          <label>Description</label>
+        </div>
+        <div class="col col-sm-3">
+          <input name="description" class="form-control" [(ngModel)]="stockData.description">
+        </div>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="row">
+        <div class="col col-sm-10">
+        </div>
+        <div class="col col-sm-2">
+          <button type="submit" (click)="saveStock(stockData)" class="btn-primary">Submit </button> &nbsp;
+          <button type="reset" (click)="reset(stockData)" class="btn-primary">Reset </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

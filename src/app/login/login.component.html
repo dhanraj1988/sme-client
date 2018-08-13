@@ -1,0 +1,30 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="300px" height="170px" class="user-avatar" />
+            <h1>SME</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <select name="logintype" class="form-control input-underline input-lg" [(ngModel)]="login.logintype">
+                                <!-- <option *ngFor="let c of test" [ngValue]="c"> {{c}} </option> -->
+                                <option>SME Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="username" [(ngModel)]="login.userName" class="form-control input-underline input-lg" placeholder="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control input-underline input-lg" [(ngModel)]="login.password" placeholder="Password">
+                    </div>
+                </div>
+                <a class="btn rounded-btn" (click)="onLoggedin(login)"> Log in </a>
+                &nbsp;
+                <!-- <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
+                <p-dialog [header]="Info" [(visible)]="display">
+                    Please enter valid username and password !.
+                </p-dialog>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<!-- <div [@routerTransition]>
+</div> -->
+<app-page-header [heading]="'Registration List'" [icon]="'fa-bar-chart-o'"></app-page-header>
+<div class="row">
+        <div class="col col-sm-12">
+                <form>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2" style="float: left;">
+                                        <a [routerLink]="['registrationDetail', 'Add', '0']">Add Registration</a> 
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Company Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="CompanyName" class="form-control" [(ngModel)]="registrationData.companyname">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Type</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <select name="SupplierType" class="form-control" [(ngModel)]="registrationData.suppliertype">
+                                                <option>Local</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <button type="submit" (click)="searchRegistration(registrationData)" class="btn-primary">Search </button> &nbsp;
+                                        <button type="reset" (click)="reset(registrationData)" class="btn-primary">Reset </button>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-12">
+                                        <p-dataTable [value]="registrationList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                                                <p-column field="companyname" [style]="{'width':'40px'}">
+                                                        <ng-template pTemplate="header">
+                                                        </ng-template>
+                                                        <ng-template let-col let-data="rowData" pTemplate="body">
+                                                                <a [routerLink]="['registrationDetail','Edit',data[col.field]]" class="fa fa-pencil"></a>
+                                                        </ng-template>
+                                                </p-column>
+                                                <p-column field="companyname" header="Company Name"></p-column>
+                                                <p-column field="country" header="Country"></p-column>
+                                                <p-column field="state" header="State"></p-column>
+                                                <p-column field="city" header="City"></p-column>
+                                                <p-column field="telephone1" header="Telephone"></p-column>
+                                        </p-dataTable>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>

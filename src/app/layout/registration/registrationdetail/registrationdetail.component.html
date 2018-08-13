@@ -1,0 +1,210 @@
+<div [@routerTransition]>
+        <app-page-header [heading]="'Registration Detail'" [icon]="'fa-bar-chart-o'"></app-page-header>
+        <div class="row">
+                <div class="col col-sm-10">
+                </div>
+                <div class="col col-sm-2" style="float: left;">
+                        <a [routerLink]="['/registration']">Back to Registration</a>
+                </div>
+        </div>
+        <div style="height: 10px"></div>
+        <div class="row">
+                <div class="col col-sm-12">
+                        <form>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">
+
+                                                        Title</label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <select name="Title" class="form-control" [(ngModel)]="registrationData.title">
+                                                        <!-- <option *ngFor="let c of test" [ngValue]="c"> {{c}} </option> -->
+                                                        <option>Mr</option>
+                                                </select>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Company Name
+                                                        <span class="required">*</span>
+                                                </label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="CompanyName" id="CompanyName" type="text" class="form-control" [(ngModel)]="registrationData.companyname" required
+                                                        #CompanyName="ngModel">
+                                                <div *ngIf="(CompanyName.dirty || CompanyName.touched)">
+                                                        <div *ngIf="(CompanyName.errors && CompanyName.errors.required)" class="alert alert-danger">
+                                                                Company Name is required.
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Country</label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <select name="Country" class="form-control" [(ngModel)]="registrationData.country">
+                                                        <option>US</option>
+                                                </select>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">State</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <select name="State" class="form-control" [(ngModel)]="registrationData.state">
+                                                        <option>Texas</option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Postal Code</label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <input name="PostalCode" class="form-control" [(ngModel)]="registrationData.postalcode">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">City</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="City" type="text" class="form-control" [(ngModel)]="registrationData.city">
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">House Number</label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <input name="HouseNumber" type="text" class="form-control" [(ngModel)]="registrationData.housenumber">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Street</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Street" type="text" class="form-control" [(ngModel)]="registrationData.street">
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Address Line 1</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="AddressLine1" type="text" class="form-control" [(ngModel)]="registrationData.addressline1">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Address Line 2</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="AddressLine2" type="text" class="form-control" [(ngModel)]="registrationData.addressline2">
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Address Line 3</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="AddressLine3" type="text" class="form-control" [(ngModel)]="registrationData.addressline3">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Language</label>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <select name="Language" class="form-control" [(ngModel)]="registrationData.language">
+                                                        <option>EN</option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Fax No</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="FaxNo" class="form-control" [(ngModel)]="registrationData.faxNo">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Type</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <select name="SupplierType" class="form-control" [(ngModel)]="registrationData.suppliertype">
+                                                        <option>Local</option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Telephone 1</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Telephone1" class="form-control" [(ngModel)]="registrationData.telephone1">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Telephone 2</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Telephone2" class="form-control" [(ngModel)]="registrationData.telephone2">
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Company Email
+                                                        <span class="required">*</span>
+                                                </label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Email" type="text" class="form-control" [(ngModel)]="registrationData.companyemail" required #Email="ngModel">
+                                                <div *ngIf="(Email.dirty || Email.touched)">
+                                                        <div *ngIf="(Email.errors && Email.errors.required)" class="alert alert-danger">
+                                                                Email is required.
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Password
+                                                        <span class="required">*</span>
+                                                </label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Password" type="text" class="form-control" [(ngModel)]="registrationData.password" required #Password="ngModel">
+                                                <div *ngIf="(Password.dirty || Password.touched)">
+                                                        <div *ngIf="(Password.errors && Password.errors.required)" class="alert alert-danger">
+                                                                Password is required.
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-2">
+                                                <label class="col-form-label">Website</label>
+                                        </div>
+                                        <div class="col col-sm-4">
+                                                <input name="Website" type="text" class="form-control" [(ngModel)]="registrationData.companywebsite">
+                                        </div>
+
+                                </div>
+                                <div style="height: 10px"></div>
+                                <div class="row">
+                                        <div class="col col-sm-10">
+                                        </div>
+                                        <div class="col col-sm-2">
+                                                <button type="submit" (click)="saveRegistration(registrationData)" class="btn-primary">
+                                                        Submit </button> &nbsp;
+                                                <button type="reset" (click)="reset(registrationData)" class="btn-primary">Reset </button>
+                                        </div>
+                                        <p-dialog [header]="header" [(visible)]="display">
+                                                {{message}}
+                                        </p-dialog>
+                                </div>
+                        </form>
+                </div>
+        </div>
+</div>

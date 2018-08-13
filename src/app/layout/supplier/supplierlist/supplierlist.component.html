@@ -1,0 +1,66 @@
+ 
+<app-page-header [heading]="'Supplier List'" [icon]="'fa-bar-chart-o'"></app-page-header>
+<div class="row">
+        <div class="col col-sm-12">
+                <form>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2" style="float: left;">
+                                        <a [routerLink]="['supplierDetail', 'Add', '0']">Add Supplier</a> 
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Supplier Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="SupplierName" class="form-control" [(ngModel)]="supplierData.suppliername">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <label>Phone Number</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                  <input name="PhoneNumber" class="form-control" [(ngModel)]="supplierData.phonenumber">
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-2">
+                                        <label>Company Name</label>
+                                </div>
+                                <div class="col col-sm-4">
+                                        <input name="CompanyName" class="form-control" [(ngModel)]="supplierData.companyname">
+                                </div>
+                                
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-10">
+                                </div>
+                                <div class="col col-sm-2">
+                                        <button type="submit" (click)="searchSupplier(supplierData)" class="btn-primary">Search </button> &nbsp;
+                                        <button type="reset" (click)="reset(supplierData)" class="btn-primary">Reset </button>
+                                </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="row">
+                                <div class="col col-sm-12">
+                                        <p-dataTable [value]="supplierList" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                                                <p-column field="id" [style]="{'width':'40px'}">
+                                                        <ng-template pTemplate="header">
+                                                        </ng-template>
+                                                        <ng-template let-col let-data="rowData" pTemplate="body">
+                                                                <a [routerLink]="['supplierDetail','Edit',data[col.field]]" class="fa fa-pencil"></a>
+                                                        </ng-template>
+                                                </p-column>
+                                                <p-column field="suppliername" header="Supplier Name"></p-column>
+                                                <p-column field="phonenumber" header="Phone Number"></p-column>
+                                                <p-column field="companyname" header="Company Name"></p-column>
+                                        </p-dataTable>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>
